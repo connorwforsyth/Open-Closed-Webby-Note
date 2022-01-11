@@ -1,15 +1,86 @@
 <html>
 
 
-<body>
-<div class="open-status"><div id="hours" class="text-block"></div>...</div>
-</body>
+<!-- This script is something that I edited.. Seemed to have some problems
+..
 
-<style>
-	.text-block {
-		font-family: ibm plex mono;
-	}
-</style>
+
+<script>
+//This script checks every 2 seconds
+//and updates the brewery's open/closed status
+
+setInterval(function timeChanger() {
+  //create vars for open or closed state
+  var hoursOpen = "We're open!";
+  var hoursClosed = "Closed";
+  /*
+  var hoursTill = console.log('Open in ' + console.log(27) + 'mins!')
+*/
+
+  //get the current date
+  var currentDate = new Date();
+  var date = currentDate.getDate();
+  var day = currentDate.getDay();
+  var time = currentDate.getHours() + ":" + currentDate.getMinutes();
+
+  //get the current time
+  var currentHours = currentDate.getHours();
+  var currentMinutes = currentDate.getMinutes();
+
+  //check if the brewery is open and write status
+  //0 = Sun, 1 = Mon 2= Tues 3=Wed, 4=Thu, 5=Fri, 6=Sat
+  
+  switch (day) {
+    case 0:
+      if ((currentHours > 2) && (currentHours < 20)) {
+        document.getElementById("hours").innerHTML=hoursOpen;  
+      } else {
+          document.getElementById("hours").innerHTML=hoursClosed;
+      }
+      break;
+    case 1:
+      if ((currentHours > 2) && (currentHours < 20) {
+        document.getElementById("hours").innerHTML=hoursOpen;  
+      } else {
+          document.getElementById("hours").innerHTML=hoursClosed;
+      }
+      break;
+    case 3:
+      if ((currentHours > 2) && (currentHours < 20)) {
+        document.getElementById("hours").innerHTML=hoursOpen;  
+      } else {
+          document.getElementById("hours").innerHTML=hoursClosed;
+      }
+      break;
+    case 4:
+      if ((currentHours > 2) && (currentHours < 20)) {
+        document.getElementById("hours").innerHTML=hoursOpen;  
+      } else {
+          document.getElementById("hours").innerHTML=hoursClosed;
+      }
+      break;
+    case 5:
+      if ((currentHours > 2) && (currentHours < 20)) {
+        document.getElementById("hours").innerHTML=hoursOpen;  
+      } else {
+          document.getElementById("hours").innerHTML=hoursClosed;
+      }
+      break;
+    case 6:
+      if ((currentHours > 2) && (currentHours < 20)) {
+        document.getElementById("hours").innerHTML=hoursOpen;  
+      } else {
+          document.getElementById("hours").innerHTML=hoursClosed;
+      }
+      break;
+    default:
+        document.getElementById("hours").innerHTML=hoursClosed;
+  }
+console.log(time)
+}, 2000);
+</script>
+
+-->
 
 <script>
 //This script checks every 2 seconds
@@ -44,7 +115,7 @@ setInterval(function timeChanger() {
           document.getElementById("hours").innerHTML=hoursClosed;
       }
       break;
-  	case 1:
+    case 1:
       if ((currentHours > 22.30) && (currentHours < 6.30) {
         document.getElementById("hours").innerHTML=hoursOpen;  
       } else {
@@ -86,5 +157,48 @@ console.log(time)
 }, 2000);
 
 </script>
+
+<style>
+
+  .open-status {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+  .text-block {
+    font-family: ibm plex mono;
+    position:  relative;
+    z-index: 3;
+  }
+
+  .box-color-bg {
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  right: 0%;
+  bottom: 0%;
+  z-index: 1;
+  display: block;
+  background-color: #53ff8d;
+}
+
+</style>
+
+<body>
+  <!-- -->
+ <div class="open-status">
+        <div class="box-color-bg">
+        </div>
+        <div class="text-block">We're open!</div>
+        </div>
+  </div>
+<div>
+<div class="open-status">
+  <div class="box-color-bg">
+  </div>
+  <div id="hours" class="text-block">...</div>
+</div>
+</body>
 
 </html>
