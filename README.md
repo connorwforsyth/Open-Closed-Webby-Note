@@ -73,4 +73,3 @@ color: #7B61FF;
 ```
 
 Current workings via javascript:
-View index.html.
